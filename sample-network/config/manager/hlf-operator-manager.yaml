@@ -67,7 +67,7 @@ spec:
       containers:
         - name: fabric-operator
           image: ${FABRIC_OPERATOR_IMAGE}
-          imagePullPolicy: ${IMAGE_PULL_POLICY}
+          imagePullPolicy: IfNotPresent
 
           command:
             - ibp-operator
