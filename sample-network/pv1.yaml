@@ -5,7 +5,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: ibmc-file-gold
+  storageClassName: ibmc-block-gold
   capacity:
     storage: 1Gi
   accessModes:
