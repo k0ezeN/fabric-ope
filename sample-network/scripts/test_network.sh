@@ -78,7 +78,8 @@ function wait_for() {
   local name=$2
 
   # wait for the operator to reconcile the CRD with a Deployment
-  kubectl -n $NS wait $type $name --for jsonpath='{.status.type}'=Deployed --timeout=60s
+  # OLD ONE :kubectl -n $NS wait $type $name --for jsonpath='{.status.type}'=Deployed --timeout=60s
+  kubectl -n $NS  wait $type $name --for=condition=Status=Deployed --timeout=60s
 
   # wait for the deployment to reach Ready
   kubectl -n $NS rollout status deploy $name
@@ -90,7 +91,7 @@ function launch_network_CAs() {
   apply_kustomization config/cas
 
   # give the operator a chance to run the first reconciliation on the new resource
-  push_fn "whaiting 30sec for deployment to be ready"
+  push_fn "whaiting 60sec for deployment to be ready"
   sleep 60
 
   wait_for ibpca org0-ca
