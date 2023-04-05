@@ -24,7 +24,9 @@ spec:
             - -c
             - mkdir -p /data/tlsca && cp /config/tlsca/fabric-ca-server-config.yaml /data/tlsca
               && mkdir -p /data/ca && cp /config/ca/fabric-ca-server-config.yaml /data/ca
-              && mkdir -p /data/org0 && mkdir -p /data/org1 && mkdir -p /data/org2
+              && mkdir -p /data/org0 
+              && mkdir -p /data/org1 
+              && mkdir -p /data/org2
               && fabric-ca-server start --home /data/ca
           env:
             - name: LICENSE
@@ -108,6 +110,9 @@ spec:
             - sh
             - -c
             - mkdir -p /data/db && chmod -R 775 /data/ && chown -R -H 7051:7051 /data/
+              &&  mkdir -p /data/org0 && chmod -R 775 /data/
+              &&  mkdir -p /data/org1 && chmod -R 775 /data/
+              &&  mkdir -p /data/org2 && chmod -R 775 /data/
           env:
             - name: LICENSE
               value: accept
