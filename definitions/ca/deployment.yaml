@@ -24,6 +24,7 @@ spec:
             - -c
             - mkdir -p /data/tlsca && cp /config/tlsca/fabric-ca-server-config.yaml /data/tlsca
               && mkdir -p /data/ca && cp /config/ca/fabric-ca-server-config.yaml /data/ca
+              && mkdir -p /data/org0 && mkdir -p /data/org1 && mkdir -p /data/org2
               && fabric-ca-server start --home /data/ca
           env:
             - name: LICENSE
