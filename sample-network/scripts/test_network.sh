@@ -91,7 +91,7 @@ function launch_network_CAs() {
 
   # give the operator a chance to run the first reconciliation on the new resource
   push_fn "whaiting 30sec for deployment to be ready"
-  sleep 30
+  sleep 60
 
   wait_for ibpca org0-ca
   wait_for ibpca org1-ca
