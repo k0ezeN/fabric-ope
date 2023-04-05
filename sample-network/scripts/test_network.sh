@@ -79,7 +79,7 @@ function wait_for() {
 
   # wait for the operator to reconcile the CRD with a Deployment
   # OLD ONE :kubectl -n $NS wait $type $name --for jsonpath='{.status.type}'=Deployed --timeout=60s
-  kubectl -n $NS  wait $type $name --for=condition=Status=Deployed --timeout=60s
+  kubectl -n $NS  wait deployment/$name --for=condition=Available=true --timeout=60s
 
   # wait for the deployment to reach Ready
   kubectl -n $NS rollout status deploy $name
