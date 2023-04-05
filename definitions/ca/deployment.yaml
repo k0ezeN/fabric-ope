@@ -93,6 +93,12 @@ spec:
               name: ca-config
             - mountPath: /config/tlsca
               name: tlsca-config
+            - mountPath: /data/org0
+              name: data-org0
+            - mountPath: /data/org1
+              name: data-org1
+            - mountPath: /data/org2
+              name: data-org2
       hostIPC: false
       hostNetwork: false
       hostPID: false
